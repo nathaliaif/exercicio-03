@@ -17,14 +17,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("FIAP ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("FIAP Store", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Cadastro de Produto", "Cadastrar", "Produto")</li>
                     <li>@Html.ActionLink("Lista de Produtos", "Listar", "Produto")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>

@@ -24,7 +24,7 @@ namespace Exercicio_03.Controllers
             _lista.Add(produto);
 
             ViewBag.prod = produto;
-            TempData["mensagem"] = "Produto cadastrado!";
+            TempData["msg"] = "Produto cadastrado!";
 
             return RedirectToAction("Cadastrar");
         }

@@ -9,18 +9,29 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Quantidade</th>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Data de Cadastro</th>
             <th>Valor</th>
+            <th>Nacional</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.Nome</td>
-                <td>@item.Quantidade</td>
+                <td>@item.Titulo</td>
+                <td>@item.Descricao</td>
+                <td>@item.DataCadastro</td>
                 <td>@item.Valor</td>
+                @if (item.Nacional == true)
+                {
+                    <td>Sim</td>
+                }
+                else
+                {
+                    <td>Não</td>
+                }
             </tr>
         }
     </tbody>
