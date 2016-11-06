@@ -9,6 +9,8 @@ namespace Exercicio_03.Controllers
 {
     public class ProdutoController : Controller
     {
+        private static List<Produto> _lista = new List<Produto>();
+
         // GET: Produto
         [HttpGet]
         public ActionResult Cadastrar()
@@ -19,8 +21,10 @@ namespace Exercicio_03.Controllers
         [HttpPost]
         public ActionResult Cadastrar(Produto produto)
         {
+            _lista.Add(produto);
 
-            TempData["msg"] = "Produto cadastrado!";
+            ViewBag.prod = produto;
+            TempData["mensagem"] = "Produto cadastrado!";
 
             return RedirectToAction("Cadastrar");
         }
@@ -28,13 +32,8 @@ namespace Exercicio_03.Controllers
         [HttpGet]
         public ActionResult Listar()
         {
-            return View();
+            return View(_lista);
         }
-
-        [HttpPost]
-        public ActionResult Listar()
-        {
-            return View();
-        }
+        
     }
 }
